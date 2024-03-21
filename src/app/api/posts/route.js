@@ -17,8 +17,8 @@ export const GET = async (req) => {
   };
 
   try {
-    const posts = await prisma.post.findMany(query);
-    const count = await prisma.post.count({ where: query.where });
+    const posts = await prisma.Post.findMany(query);
+    const count = await prisma.Post.count({ where: query.where });
     return new NextResponse(JSON.stringify({ posts, count }, { status: 200 }));
   } catch (err) {
     console.log(err);
@@ -49,7 +49,7 @@ export const POST = async (req) => {
 
   try {
     const body = await req.json();
-    const post = await prisma.post.create({
+    const post = await prisma.Post.create({
       data: { ...body, userEmail: session.user.email },
     });
 
