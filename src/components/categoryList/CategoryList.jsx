@@ -8,6 +8,14 @@ const getData = async () => {
     cache: "no-store",
   });
 
+  console.log('env: ', process.env.NEXTAUTH_URL)
+
+  console.log({
+    res,
+  });
+
+  
+
   if (!res.ok) {
     throw new Error("Failed");
   }
