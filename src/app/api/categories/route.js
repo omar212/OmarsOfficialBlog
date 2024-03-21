@@ -7,6 +7,8 @@ export const GET = async () => {
       where: { userEmail: 'omarelnagdy16@gmail.com' }
     });
 
+    console.log('categories: ', categories);
+
     return new NextResponse(JSON.stringify(categories, { status: 200 }));
   } catch (err) {
     console.log(err);
