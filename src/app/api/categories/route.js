@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export const GET = async () => {
   try {
     const categories = await prisma.Category.findMany({
-      where: { userEmail: session.user.email }
+      where: { userEmail: 'omarelnagdy16@gmail.com' }
     });
 
     return new NextResponse(JSON.stringify(categories, { status: 200 }));
